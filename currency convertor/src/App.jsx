@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import InputBox from './components/InputBox';
 import usecurrencyinfo from './hooks/usecurrencyinfo';
+import currency from './img/currency.jpeg';
 function App() {
 
   const [amount,setAmount]=useState(0);
@@ -8,9 +9,9 @@ function App() {
   const [to,setTo]=useState("inr");
   const [convertedAmount,setConvertedAmount]=useState(0);
 
-  const currencyinfo=usecurrencyinfo(from)
+  const currencyInfo=usecurrencyinfo(from)
 
-  const options=Object.keys(currencyinfo)
+  const options = Object.keys(currencyInfo)
 
   const swap=()=>{
     setFrom(to);
@@ -19,17 +20,22 @@ function App() {
     setAmount(convertedAmount)
   }
   const Convert=()=>{
-    setConvertedAmount(amount*currencyinfo[to])
+    setConvertedAmount(amount*currencyInfo[to])
   }
   
   return (
     <>
-      <div
-            className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
+        
+        <div
+            
+            className="w-auto h-auto flex md:flex-nowrap flex-wrap justify-center items-center bg-cover bg-no-repeat"
             style={{
                 backgroundColor:"gray",
             }}
         >
+            <div>
+                <img className="md:flex-row flex-col md:max-h-screen md:max-w-3xl py-1" src={currency} alt="image"/>
+            </div>
             <div className="w-full">
                 <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
                     <form
@@ -43,7 +49,7 @@ function App() {
                                 label="From"
                                 amount={amount}
                                 currencyOption={options}
-                                onCurrencyChange={(currency)=>setAmount(amount)}
+                                onCurrencyChange={(currency)=>setFrom(currency)}
                                 selectCurrency={from}
                                 onAmountChange={(amount)=>setAmount(amount)}
                             />
