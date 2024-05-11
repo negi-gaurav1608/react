@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { AiFillAlert } from "react-icons/ai";
 import './App.css';
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
     <>
       <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-8 text-orange-300 m-3 bg-gray-600">
         <h1 className='text-white text-center my-3'>Password Generator</h1>
+        <AiFillAlert/>
         <div className="flex shadow rounded-lg overflow mb-3">
         <input
           type="text"
