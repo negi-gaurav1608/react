@@ -1,13 +1,121 @@
-import React from 'react'
+import { useState } from "react";
+import { Link } from 'react-router-dom';
 
-function Registration() {
+export default function Registration() {
+
+    const [user,setUser]=useState({
+        username:"",
+        email:"",
+        password:""
+    })
+
+    const handleInput=(e)=>{
+        let name=e.target.name;
+        let value=e.target.value;
+
+        setUser({
+            ...user,
+            [name]:value,
+        })
+    }
+
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        console.log(user);
+    }
     return (
-        <div>
-            <div className='flex min-h-ful flex-1 flex-col justiy-center px-6 py-12 lh:px-8'>
-                <div className="sm"
-            </div>
-        </div>
-    )
-}
+        <>
+            <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+                <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+                <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+                    Log In to your account
+                </h2>
+                </div>
 
-export default Registration
+                <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+                <form className="space-y-6" onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="name" className="block text-sm font-medium leading-6 text-gray-900">
+                            User Name
+                        </label>
+                        <div className="mt-2">
+                        <input
+                            id="username"
+                            name="username"
+                            type="text"
+                            required
+                            placeholder="username"
+                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                            autoComplete="off"
+                            value={user.username}
+                            onChange={handleInput}
+                        />
+                        </div>
+                    </div>
+
+                    <div>
+                    <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                        Email address
+                    </label>
+                    <div className="mt-2">
+                        <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="@gmail.com"
+                        required
+                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-3"
+                        autoComplete="off"
+                        value={user.email}
+                        onChange={handleInput}
+                        />
+                    </div>
+                    </div>
+
+                    <div>
+                    <div className="flex items-center justify-between">
+                        <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+                        Password
+                        </label>
+                    </div>
+                    <div className="mt-2">
+                        <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        placeholder='password'
+                        required
+                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-3"
+                        autoComplete="off"
+                        value={user.password}
+                        onChange={handleInput}
+                        />
+                    </div>
+                    </div>
+
+                    <div>
+                    <button
+                        type="submit"
+                        className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    >
+                        Sign in
+                    </button>
+                    </div>
+                </form>
+
+                <p className="mt-10 text-center text-sm text-gray-500">
+                    Already registered{' '}
+                    
+                    <Link
+                        to="/login"
+                        className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+                    >
+                        Login here
+                    </Link>
+
+                </p>
+                </div>
+            </div>
+        </>
+    );
+}

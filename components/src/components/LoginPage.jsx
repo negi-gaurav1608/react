@@ -81,15 +81,15 @@ function LoginPage() {
 
                     <div className="flex items-center justify-between">
                     <p className="text-sm text-gray-500">
-                        No account?
-                        <a className="underline" href="#">Sign up</a>
+                        Already have account
+                        <a className="underline" href="#">Login</a>
                     </p>
 
                     <button
                         type="submit"
                         className="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
                     >
-                        Sign in
+                        Login
                     </button>
                     </div>
                 </form>

@@ -10,7 +10,7 @@ function Select({
     return (
         <div className="w-full">
             {label && <label htmlfor={id} className=""></label>}
-            <select 
+            <select
             {...props}
             id={id}
             ref={ref}

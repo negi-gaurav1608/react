@@ -1,6 +1,6 @@
 import React from 'react'
 
-function container() {
+function Container() {
     return (
         <div className='w-full max-w-7xl mx-auto px-4'>
             {children}
@@ -8,4 +8,4 @@ function container() {
     )
 }
 
-export default container
+export default Container
