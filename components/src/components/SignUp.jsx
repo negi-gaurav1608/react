@@ -19,35 +19,36 @@ function SignUp() {
 
     const handleSubmit=async(e)=>{
         e.preventDefault();
-        try {
-        const response = await fetch(URL, {
-            method: "POST",
-            headers: {
-            "Content-Type": "application/json",
-            },
-            body: JSON.stringify(user),
-        });
+        console.log(user);
+        // try {
+        // const response = await fetch(URL, {
+        //     method: "POST",
+        //     headers: {
+        //     "Content-Type": "application/json",
+        //     },
+        //     body: JSON.stringify(user),
+        // });
 
-        console.log("login form", response);
+        // console.log("login form", response);
 
-        const res_data = await response.json();
+        // const res_data = await response.json();
 
-        if (response.ok) {
-            // alert("Login Successful");
-            storeTokenInLS(res_data.token);
+        // if (response.ok) {
+        //     // alert("Login Successful");
+        //     storeTokenInLS(res_data.token);
 
-            setUser({ email: "", password: "" });
-            toast.success("Login successful");
-            navigate("/");
-        } else {
-            toast.error(
-            res_data.extraDetails ? res_data.extraDetails : res_data.message
-            );
-            console.log("invalid credential");
-        }
-        } catch (error) {
-        console.log(error);
-        }
+        //     setUser({ email: "", password: "" });
+        //     toast.success("Login successful");
+        //     navigate("/");
+        // } else {
+        //     toast.error(
+        //     res_data.extraDetails ? res_data.extraDetails : res_data.message
+        //     );
+        //     console.log("invalid credential");
+        // }
+        // } catch (error) {
+        // console.log(error);
+        // }
     }
 
 
@@ -90,11 +91,7 @@ function SignUp() {
                         <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
                         Password
                         </label>
-                        <div className="text-sm">
-                        <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
-                            Forgot password?
-                        </a>
-                        </div>
+                        
                     </div>
                     <div className="mt-2">
                         <input
