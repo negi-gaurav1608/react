@@ -1,9 +1,26 @@
 
-import React from 'react'
-
-
+import React, { useState } from 'react';
 
 function Contact() {
+    const [user,setUser]=useState({
+        name:"",
+        email:"",
+        tel:""
+    });
+    const handleInput=(e)=>{
+        let name = e.target.name;
+        let value = e.target.value;
+    
+        setUser({
+            ...user,
+            [name]: value,
+        });
+    }
+    
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        console.log(user);
+    }
 
     return (
         <div className="relative flex items-top justify-center min-h-[700px] bg-white sm:items-center sm:pt-0">
@@ -91,7 +108,7 @@ function Contact() {
                             </div>
                         </div>
 
-                        <form className="p-6 flex flex-col justify-center">
+                        <form className="p-6 flex flex-col justify-center" onSubmit={handleSubmit}>
                             <div className="flex flex-col">
                                 <label for="name" className="hidden">
                                     Full Name
@@ -101,6 +118,8 @@ function Contact() {
                                     name="name"
                                     id="name"
                                     placeholder="Full Name"
+                                    value={user.name}
+                                    onChange={handleInput}
                                     className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
                                 />
                             </div>
@@ -114,6 +133,8 @@ function Contact() {
                                     name="email"
                                     id="email"
                                     placeholder="Email"
+                                    value={user.email}
+                                    onChange={handleInput}
                                     className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
                                 />
                             </div>
@@ -127,6 +148,8 @@ function Contact() {
                                     name="tel"
                                     id="tel"
                                     placeholder="Telephone Number"
+                                    value={user.tel}
+                                    onChange={handleInput}
                                     className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400 text-gray-800 font-semibold focus:border-orange-500 focus:outline-none"
                                 />
                             </div>
