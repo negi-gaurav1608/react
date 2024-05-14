@@ -1,0 +1,16 @@
+{
+    "slides":[
+        {
+            "src":"https://images.pexels.com/photos/5554303/pexels-photo-5554303.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "alt":"image1"
+        },
+        {
+            "src":"https://images.pexels.com/photos/6147275/pexels-photo-6147275.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            "alt":"image2"
+        },
+        {
+            "src":"https://images.pexels.com/photos/6532520/pexels-photo-6532520.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+            "alt":"image3"
+        }
+    ]
+}

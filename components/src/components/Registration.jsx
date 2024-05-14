@@ -35,9 +35,12 @@ export default function Registration() {
                 <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                 <form className="space-y-6" onSubmit={handleSubmit}>
                     <div>
+                    <div className="flex items-center justify-between">
                         <label htmlFor="name" className="block text-sm font-medium leading-6 text-gray-900">
-                            User Name
+                        User Name
                         </label>
+                    </div>
+                        
                         <div className="mt-2">
                         <input
                             id="username"
@@ -54,9 +57,12 @@ export default function Registration() {
                     </div>
 
                     <div>
-                    <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                    <div className="flex items-center justify-between">
+                        <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                         Email address
-                    </label>
+                        </label>
+                    </div>
+                    
                     <div className="mt-2">
                         <input
                         id="email"

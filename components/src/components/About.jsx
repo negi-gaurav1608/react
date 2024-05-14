@@ -1,6 +1,7 @@
 import React from 'react'
+import { slides } from "../data/CrouselData.json"
 import Cards from "./Cards"
-
+import Slider from './Slider'
 function About() {
     return (
         <div >
@@ -29,6 +30,9 @@ function About() {
                     position="Student"
                     img="https://images.pexels.com/photos/20195753/pexels-photo-20195753/free-photo-of-new-york-city-at-night-from-the-top-of-the-empire-state-building.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                 />
+            </div>
+            <div>
+                <Slider data={slides}/>
             </div>
         </div>
         

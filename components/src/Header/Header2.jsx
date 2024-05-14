@@ -20,12 +20,10 @@ export default function Header2() {
                         >
                             Log in
                         </Link>
-                        <Link
-                            to="/registration"
-                            className="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:ring-orange-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
-                        >
-                            Register
-                        </Link>
+
+                        
+
+                        
                     </div>
                     <div
                         className="justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
